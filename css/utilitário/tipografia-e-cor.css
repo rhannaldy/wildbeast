@@ -1,0 +1,36 @@
+.font-p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+}
+.font-1-p1 {
+  font-size: 0.875em;
+  color: #b07dfb;
+  max-width: 16em;
+  line-height: 1.6;
+}
+.font-1-p {
+  font-family: "Courier New", Courier, monospace;
+}
+.font-g {
+  font-size: 3.75em;
+}
+.cor-1 {
+  color: rgba(0, 0, 0, 0.7);
+}
+.cor-2 {
+  color: #fff;
+}
+.cor-p1 {
+  color: #b07dfb;
+}
+.cor-bg-1 {
+  background: linear-gradient(
+    135deg,
+    rgba(131, 79, 209, 1),
+    rgba(176, 125, 251, 1)
+  );
+}
+.col-2 {
+  grid-column: 1/-1;
+}

@@ -1,0 +1,226 @@
+.estrutura {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) 3fr 300px;
+  grid-template-areas:
+    "header header header"
+    "sidenav content ads"
+    "footer footer footer";
+}
+.header {
+  grid-area: header;
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.header li a {
+  padding: 15px 10px;
+  border-radius: 5px;
+  color: #fff;
+  background: #0000001c;
+  transition: 0.3s;
+  font-size: 1.125em;
+}
+.header li a:hover {
+  background: #0000005d;
+}
+.logo {
+  max-width: 200px;
+}
+
+@media (max-width: 800px) {
+  .header {
+    grid-template-columns: 1fr;
+  }
+  .logo {
+    margin-bottom: 20px;
+  }
+}
+
+/*sidenav*/
+.sidenav {
+  grid-area: sidenav;
+  background: #fafbfc;
+  padding: 30px;
+}
+.sidenav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.sidenav li a {
+  display: block;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  transition: 0.3s;
+  min-width: 60px;
+  max-width: 100px;
+  margin: 0 auto;
+  box-shadow: 2px 2px 10px 2px rgb(44, 44, 44, 0.15);
+}
+
+.sidenav ul li a:hover {
+  background-color: #b07dfb;
+}
+
+/* content*/
+.content {
+  grid-area: content;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  justify-content: start;
+}
+.content > div > h1 {
+  line-height: 1;
+  font-size: 3.75em;
+}
+.content > div > span {
+  font-style: italic;
+}
+.caracteristicas {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+.caracteristicas > div {
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+  border-radius: 5px 5px 10px 10px;
+  box-shadow: 2px 2px 10px 2px rgb(44, 44, 44, 0.15);
+}
+.caracteristicas span {
+  display: block;
+}
+.numero {
+  color: #b07dfb;
+  font-size: 3.75em;
+  padding: 10px;
+  border-radius: 5px 5px 0px 0px;
+}
+.rotulo {
+  background-color: #fff;
+  border-radius: 5px;
+  color: #b07dfb;
+  text-align: center;
+  border-radius: 0px 0px 5px 5px;
+  padding: 5px;
+}
+
+.imagem-1 {
+  grid-row: span 2;
+  align-self: flex-end;
+  width: -webkit-fill-available;
+}
+.imagem-2 {
+  grid-column: 2;
+  align-self: flex-end;
+}
+
+.blockquote {
+  display: block;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.5em;
+  line-height: 1;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px 2px rgb(44, 44, 44, 0.15);
+}
+
+.lista {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px 2px rgb(44, 44, 44, 0.15);
+}
+.lista li {
+  font-family: "Courier New", Courier, monospace;
+}
+.lista li + li {
+  padding-top: 20px;
+
+  border-top: 2px solid #af7bfb;
+}
+.informacoes p + p {
+  margin-top: 30px;
+}
+
+.lobo-3 {
+  max-width: 100%;
+}
+
+/* anuncios*/
+
+.ads {
+  grid-area: ads;
+  background-color: #fafbfc;
+  display: grid;
+  align-content: start;
+  gap: 30px;
+  padding: 30px;
+}
+.ads img {
+  display: block;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+/*footer*/
+.footer {
+  grid-area: footer;
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .estrutura {
+    grid-template-areas:
+      "header header header"
+      "sidenav content content"
+      "sidenav ads ads"
+      "footer footer footer";
+  }
+  .ads {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 870px) {
+  .estrutura {
+    grid-template-areas:
+      "header header header"
+      " sidenav sidenav sidenav"
+      "content content content"
+      "ads ads ads"
+      "footer footer footer";
+  }
+  .sidenav ul {
+    display: flex;
+    flex-direction: row;
+  }
+  .sidenav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  .content {
+    grid-template-columns: auto;
+  }
+  .col-2 {
+    grid-column: initial;
+  }
+}
